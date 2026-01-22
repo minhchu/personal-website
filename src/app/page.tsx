@@ -31,7 +31,7 @@ export default function Home() {
           <header className="mb-16 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
             <div>
               <h1 className="text-[28px] font-bold tracking-tight text-[#111318] dark:text-white mb-1">
-                Chu Ngoc Minh
+                Minh Chu
               </h1>
               <p className="text-sm text-[#616f89] dark:text-gray-400 font-medium italic">
                 Software Engineer & Systems Enthusiast
@@ -41,23 +41,18 @@ export default function Home() {
               <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Experience</a>
               <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Projects</a>
               <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">GitHub</a>
-              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">LinkedIn</a>
-              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">CV/Resume</a>
             </nav>
           </header>
 
           <section className="flex flex-col text-[17px] leading-relaxed text-[#111318] dark:text-gray-200 max-w-2xl">
             <p>
-              I build tools and infrastructure with a focus on simplicity, performance, and correctness. My work revolves around the intersection of low-level systems programming and scalable architectural design.
+              I am a software engineer who enjoys the process of discovery through code. I specialize in building scalable products and robust software architecture, with a strong focus on minimizing technical debt and ensuring long-term maintainability.
             </p>
             <p>
-              Currently, I am exploring distributed systems, compiler design, and the development of minimalist user interfaces that prioritize information density. I believe that software should be as invisible as possible, serving as a reliable extension of human thought rather than a distraction.
+              My experience spans from early-stage startups to established platforms. I&apos;ve taken ownership of entire system architectures, mentored teams, and delivered full-stack solutions across diverse domains including health-tech, mar-tech, and AI-driven agricultural tools.
             </p>
             <p>
-              Operating out of Hanoi, I spend my time contributing to open-source projects, studying legacy hardware architectures, and refining my craft in systems-level languages like Rust and C.
-            </p>
-            <p>
-              In my professional capacity, I focus on building resilient backend services and developer tools that empower teams to ship faster without sacrificing stability.
+              Operating out of Hanoi, I am always looking for new challenges that allow me to leverage my skills to build efficient and impactful tools.
             </p>
           </section>
 
@@ -71,7 +66,7 @@ export default function Home() {
         </main>
 
         <div className="fixed bottom-8 right-8">
-          <button 
+          <button
             className="p-2 text-[#616f89] hover:text-primary transition-colors"
             onClick={toggleDarkMode}
           >
