@@ -1,154 +1,84 @@
 "use client";
 
-import { css, cx } from "~/styled-system/css";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import programmingIllustration from "./undraw_programming.svg";
-import { flex, grid } from "~/styled-system/patterns";
-import { ExternalLink, Mail } from "lucide-react";
-import githubIcon from "./github-mark.svg";
-
-const WavingHand = () => {
-  return (
-    <motion.div
-      style={{
-        marginBottom: "-20px",
-        marginRight: "-45px",
-        paddingBottom: "20px",
-        paddingRight: "45px",
-        display: "inline-block",
-      }}
-      animate={{ rotate: 20 }}
-      transition={{
-        repeat: Infinity,
-        repeatType: "reverse",
-        duration: 0.2,
-        ease: "easeInOut",
-        type: "tween",
-      }}
-    >
-      👋
-    </motion.div>
-  );
-};
-
-const containerStyle = css({ maxW: "8xl", marginX: "auto", px: 4 });
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  return (
-    <main
-      className={cx(
-        flex({ direction: "column" }),
-        css({ w: "100%", minH: "100vh", bg: "gray.100" })
-      )}
-    >
-      <header
-        className={cx(
-          css({
-            position: "fixed",
-            w: "100%",
-            py: 4,
-            zIndex: 10,
-            bgColor: "rgba(243,244,246,0.8)",
-            backdropFilter: "blur(4px)",
-          })
-        )}
-      >
-        <div
-          className={cx(
-            flex({ justify: "space-between", align: "center" }),
-            css({ px: { base: 4, sm: 16 } }),
-            containerStyle
-          )}
-        >
-          <a
-            href="https://docs.google.com/document/d/1yylCeivtB9ErNDhtammr8oOu12ZfUaaO44ZcMzvncDQ/edit?usp=sharing"
-            className={css({ fontSize: "lg" })}
-            target="_blank"
-            rel="noreferrer"
-          >
-            My Resume{" "}
-            <ExternalLink
-              size={16}
-              className={css({ display: "inline-block", mt: "-6px" })}
-            />
-          </a>
-          <div>
-            <a
-              href="https://github.com/minhchu"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                src={githubIcon}
-                alt="Github"
-                className={css({ w: 9, h: 9 })}
-              />
-            </a>
-          </div>
-        </div>
-      </header>
+  const [isDark, setIsDark] = useState(false);
 
-      <section
-        id="hero"
-        className={cx(
-          grid({ columns: { base: 1, sm: 2 }, gap: 8 }),
-          css({
-            px: { base: 4, sm: 16 },
-            py: { base: 4, sm: 32 },
-            minH: "100vh",
-          }),
-          containerStyle
-        )}
-      >
-        <div
-          className={cx(
-            flex({ direction: "column" }),
-            css({ mt: { base: 32, sm: 48 } })
-          )}
-        >
-          <h1 className={css({ fontWeight: 700, fontSize: "48px" })}>
-            Greetings
-            <WavingHand />,
-          </h1>
-          <p
-            className={css({
-              fontWeight: 400,
-              fontSize: "24px",
-              mt: 4,
-            })}
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+    if (!isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
+
+  return (
+    <div className="bg-background-light dark:bg-background-dark text-[#111318] dark:text-[#e0e0e0] transition-colors duration-300">
+      <div className="relative min-h-screen w-full flex flex-col px-8 py-12 md:px-24 md:py-24 lg:px-48 lg:py-32">
+        <main className="flex flex-col h-full w-full">
+          <header className="mb-16 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+            <div>
+              <h1 className="text-[28px] font-bold tracking-tight text-[#111318] dark:text-white mb-1">
+                Chu Ngoc Minh
+              </h1>
+              <p className="text-sm text-[#616f89] dark:text-gray-400 font-medium italic">
+                Software Engineer & Systems Enthusiast
+              </p>
+            </div>
+            <nav className="flex flex-wrap gap-x-8 gap-y-4">
+              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Experience</a>
+              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Projects</a>
+              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">GitHub</a>
+              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">LinkedIn</a>
+              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">CV/Resume</a>
+            </nav>
+          </header>
+
+          <section className="flex flex-col text-[17px] leading-relaxed text-[#111318] dark:text-gray-200 max-w-2xl">
+            <p>
+              I build tools and infrastructure with a focus on simplicity, performance, and correctness. My work revolves around the intersection of low-level systems programming and scalable architectural design.
+            </p>
+            <p>
+              Currently, I am exploring distributed systems, compiler design, and the development of minimalist user interfaces that prioritize information density. I believe that software should be as invisible as possible, serving as a reliable extension of human thought rather than a distraction.
+            </p>
+            <p>
+              Operating out of Hanoi, I spend my time contributing to open-source projects, studying legacy hardware architectures, and refining my craft in systems-level languages like Rust and C.
+            </p>
+            <p>
+              In my professional capacity, I focus on building resilient backend services and developer tools that empower teams to ship faster without sacrificing stability.
+            </p>
+          </section>
+
+          <footer className="mt-24 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-8 max-w-2xl">
+            <div className="flex items-center justify-between">
+              <a className="text-xs text-[#616f89] dark:text-gray-500 hover:text-primary transition-colors" href="mailto:contact@chuminh.me">
+                contact@chuminh.me
+              </a>
+            </div>
+          </footer>
+        </main>
+
+        <div className="fixed bottom-8 right-8">
+          <button 
+            className="p-2 text-[#616f89] hover:text-primary transition-colors"
+            onClick={toggleDarkMode}
           >
-            I am Minh. As a full-stack developer proficient in{" "}
-            <strong>React.js</strong>, <strong>Next.js</strong>, and{" "}
-            <strong>Laravel</strong>, I specialize in crafting seamless web
-            experiences from start to finish.
-          </p>
-          <div className={css({ mt: 4 })}>
-            <a
-              href="mailto:scsilver94@gmail.com"
-              className={css({
-                display: "inline-block",
-                borderRadius: "md",
-                bgColor: "gray.700",
-                color: "white",
-                fontWeight: 500,
-                fontSize: "xl",
-                px: 4,
-                py: 4,
-                _hover: {
-                  bgColor: "gray.800",
-                },
-              })}
-            >
-              <Mail className={css({ display: "inline-block", mt: "-6px" })} />{" "}
-              Contact me
-            </a>
-          </div>
+            <span className="material-symbols-outlined text-[20px]">dark_mode</span>
+          </button>
         </div>
-        <div className={css({ mt: { base: 0, sm: 24 } })}>
-          <Image src={programmingIllustration} alt="Illustration" />
-        </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }

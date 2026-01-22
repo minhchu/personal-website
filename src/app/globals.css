@@ -1,1 +1,21 @@
-@layer reset, base, tokens, recipes, utilities;
+@import "tailwindcss";
+
+body {
+  font-family: 'Newsreader', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.link-hover {
+  @apply transition-colors duration-200;
+}
+
+.link-hover:hover {
+  color: #1152d4;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+p {
+  @apply mb-6;
+}
