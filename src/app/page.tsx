@@ -29,7 +29,7 @@ export default function Home() {
               I am a software engineer who enjoys the process of discovery through code. I specialize in building scalable products and robust software architecture, with a strong focus on minimizing technical debt and ensuring long-term maintainability.
             </p>
             <p>
-              My experience spans from early-stage startups to established platforms. I&apos;ve taken ownership of entire system architectures, mentored teams, and delivered full-stack solutions across diverse domains including health-tech, mar-tech, and AI-driven agricultural tools.
+              My experience spans from early-stage startups to established platforms. I&apos;ve taken ownership of entire system architectures, mentored teams, and delivered full-stack solutions across diverse domains including health-tech, e-commerce, and AI-driven agricultural tools.
             </p>
             <p>
               Operating out of Hanoi, I am always looking for new challenges that allow me to leverage my skills to build efficient and impactful tools.
