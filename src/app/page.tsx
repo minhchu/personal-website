@@ -1,32 +1,10 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { ThemeToggle } from "./components/theme-toggle";
 
 export default function Home() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
 
   return (
     <div className="bg-background-light dark:bg-background-dark text-[#111318] dark:text-[#e0e0e0] transition-colors duration-300">
-      <div className="relative min-h-screen w-full flex flex-col px-8 py-12 md:px-24 md:py-24 lg:px-48 lg:py-32">
+      <div className="relative min-h-screen w-full flex flex-col px-8 py-12 md:px-24 md:py-16 lg:px-48 lg:py-24">
         <main className="flex flex-col h-full w-full">
           <header className="mb-16 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
             <div>
@@ -40,7 +18,9 @@ export default function Home() {
             <nav className="flex flex-wrap gap-x-8 gap-y-4">
               <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Experience</a>
               <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Projects</a>
-              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">GitHub</a>
+              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover inline-flex items-center gap-1" href="https://github.com/minhchu" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
             </nav>
           </header>
 
@@ -59,20 +39,13 @@ export default function Home() {
           <footer className="mt-24 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-8 max-w-2xl">
             <div className="flex items-center justify-between">
               <a className="text-xs text-[#616f89] dark:text-gray-500 hover:text-primary transition-colors" href="mailto:contact@chuminh.me">
-                contact@chuminh.me
+                © 2026 Minh Chu
               </a>
             </div>
           </footer>
         </main>
 
-        <div className="fixed bottom-8 right-8">
-          <button
-            className="p-2 text-[#616f89] hover:text-primary transition-colors"
-            onClick={toggleDarkMode}
-          >
-            <span className="material-symbols-outlined text-[20px]">dark_mode</span>
-          </button>
-        </div>
+        <ThemeToggle />
       </div>
     </div>
   );
