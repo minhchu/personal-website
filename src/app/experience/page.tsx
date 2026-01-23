@@ -3,7 +3,7 @@ import { Navigation } from "../components/navigation";
 import { ThemeToggle } from "../components/theme-toggle";
 
 export const metadata = {
-  title: "Experience | Chu Ngoc Minh",
+  title: "Experience | Minh Chu",
   description: "Professional experience and career timeline",
 };
 
@@ -14,7 +14,7 @@ export default function ExperiencePage() {
         <header className="flex flex-col md:flex-row justify-between items-start md:items-baseline gap-4 mb-16 w-full shrink-0">
           <div>
             <h1 className="text-2xl font-bold tracking-tight text-[#111318] dark:text-white">
-              Chu Ngoc Minh
+              Minh Chu
             </h1>
           </div>
           <Navigation />
@@ -30,7 +30,18 @@ export default function ExperiencePage() {
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1 border-b border-gray-100 dark:border-gray-800 pb-1">
                     <h3 className="font-bold text-[18px]">{experience.title}</h3>
-                    <span className="text-sm font-medium text-[#111318] dark:text-white">{experience.company}</span>
+                    {experience.url ? (
+                      <a 
+                        href={experience.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        {experience.company}
+                      </a>
+                    ) : (
+                      <span className="text-sm font-medium text-[#111318] dark:text-white">{experience.company}</span>
+                    )}
                   </div>
                   <p className="text-[15px] leading-relaxed text-[#4a5568] dark:text-gray-400 mt-1">
                     {experience.description}

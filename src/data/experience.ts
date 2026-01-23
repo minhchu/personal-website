@@ -5,71 +5,50 @@ export interface Experience {
   period: string;
   description: string;
   technologies: string;
+  url?: string;
 }
 
 export const experiences: Experience[] = [
   {
     id: "doke-ai",
-    title: "Senior Backend Engineer",
+    title: "Full-stack developer",
     company: "Doke.ai",
-    period: "2023 — Present",
-    description: "Spearheaded backend architecture for high-performance AI tools.",
-    technologies: "FastAPI, Next.js, Supabase"
+    period: "Aug 2025 — Dec 2025",
+    description: "Built document data extraction platform enabling users to upload documents and extract structured data instantly with API integration.",
+    technologies: "FastAPI, Next.js, Supabase, Clerk, OpenAI API, Stripe, Inngest",
+    url: "https://doke.ai"
   },
   {
     id: "webprovise",
-    title: "Full Stack Engineer", 
+    title: "Back-end developer",
     company: "WebProvise",
-    period: "2021 — 2023",
-    description: "Designed system architecture for scalable e-commerce solutions.",
-    technologies: "Node.js, React, AWS, MongoDB"
+    period: "Aug 2023 — Apr 2025",
+    description: "Designed and developed health management platform from ground up, providing technical leadership and mentoring team members.",
+    technologies: "MedusaJS, NestJS, GraphQL, Redis, Docker, Kubernetes, Next.js, PostgreSQL, Stripe, LangChain",
+    url: "https://wellehealth.com"
   },
   {
     id: "freelance",
-    title: "Software Consultant",
-    company: "Freelance", 
-    period: "2020 — 2021",
-    description: "Delivered custom full-stack solutions for global clients.",
-    technologies: "Python, Django, React Native"
+    title: "Freelance developer",
+    company: "Freelance",
+    period: "Apr 2019 — Aug 2023",
+    description: "Developed multiple full-stack applications including CRM systems, webinar platforms, headless CMS migrations, and social network platforms.",
+    technologies: "React, TypeScript, Laravel, Next.js, Supabase, AWS, Chakra UI, Tailwind CSS"
   },
   {
     id: "beeketing",
-    title: "Software Engineer",
-    company: "Beeketing",
-    period: "2019 — 2020", 
-    description: "Optimized marketing automation microservices for high throughput.",
-    technologies: "Golang, Kubernetes, Vue.js"
+    title: "Full-stack developer",
+    company: "Beeketing (now OpenCommerce)",
+    period: "Apr 2018 — Apr 2019",
+    description: "Built core platform features including tracking system, drag-and-drop email builder, and review monitoring with web scraping.",
+    technologies: "Golang, gRPC, Vue.js, PHP, Python, MySQL, Redis, RabbitMQ"
   },
   {
     id: "sero-ai",
-    title: "Backend Developer",
+    title: "Full-stack developer",
     company: "Sero.ai",
-    period: "2018 — 2019",
-    description: "Built crop disease detection APIs serving thousands of farmers.",
-    technologies: "Python, TensorFlow, Flask"
-  },
-  {
-    id: "hackanoi",
-    title: "Core Organizer",
-    company: "Hackanoi",
-    period: "2018",
-    description: "Orchestrated large-scale hackathons fostering local tech talent.",
-    technologies: "Community Building, Event Mgmt"
-  },
-  {
-    id: "tumita",
-    title: "Frontend Developer",
-    company: "Tumita",
-    period: "2017 — 2018",
-    description: "Developed responsive UI components for travel booking platforms.",
-    technologies: "React, Redux, SCSS"
-  },
-  {
-    id: "azebiz",
-    title: "Junior Developer",
-    company: "Azebiz", 
-    period: "2016 — 2017",
-    description: "Maintained legacy systems and implemented new feature modules.",
-    technologies: "PHP, Laravel, jQuery"
+    period: "Mar 2016 — Feb 2018",
+    description: "Developed mobile and web apps for crop management with AI-powered disease detection and expert guidance system.",
+    technologies: "Node.js, React.js, React Native, MongoDB, MySQL, AWS, Jenkins"
   }
 ];
