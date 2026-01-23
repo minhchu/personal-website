@@ -1,4 +1,5 @@
 import { ThemeToggle } from "./components/theme-toggle";
+import { Navigation } from "./components/navigation";
 
 export default function Home() {
 
@@ -15,15 +16,7 @@ export default function Home() {
                 Software Engineer & Systems Enthusiast
               </p>
             </div>
-            <nav className="flex flex-wrap gap-x-8 gap-y-4">
-              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Experience</a>
-              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover inline-flex items-center gap-1" href="https://github.com/minhchu" target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover inline-flex items-center gap-1" href="https://www.linkedin.com/in/minhchungoc/" target="_blank" rel="noopener noreferrer">
-                Linkedin
-              </a>
-            </nav>
+            <Navigation />
           </header>
 
           <section className="flex flex-col text-[17px] leading-relaxed text-[#111318] dark:text-gray-200 max-w-2xl">

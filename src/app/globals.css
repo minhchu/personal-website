@@ -26,6 +26,15 @@ body {
   text-underline-offset: 4px;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 p {
   margin-bottom: 1.5rem;
 }
