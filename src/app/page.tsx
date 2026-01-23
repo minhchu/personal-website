@@ -17,9 +17,11 @@ export default function Home() {
             </div>
             <nav className="flex flex-wrap gap-x-8 gap-y-4">
               <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Experience</a>
-              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover" href="#">Projects</a>
               <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover inline-flex items-center gap-1" href="https://github.com/minhchu" target="_blank" rel="noopener noreferrer">
                 GitHub
+              </a>
+              <a className="text-sm font-medium text-[#111318] dark:text-gray-300 link-hover inline-flex items-center gap-1" href="https://www.linkedin.com/in/minhchungoc/" target="_blank" rel="noopener noreferrer">
+                Linkedin
               </a>
             </nav>
           </header>

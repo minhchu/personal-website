@@ -10,7 +10,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Chu Ngoc Minh | About",
+  title: "Minh Chu",
   description: "Software Engineer & Systems Enthusiast",
 };
 
