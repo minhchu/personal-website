@@ -9,7 +9,7 @@ export function Navigation() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/experience", label: "Experience" },
-    { href: "#", label: "Projects" },
+    { href: "/projects", label: "Projects" },
     { href: "https://github.com/minhchu", label: "GitHub", external: true },
     { href: "https://www.linkedin.com/in/minhchungoc/", label: "LinkedIn", external: true }
   ];
@@ -20,7 +20,7 @@ export function Navigation() {
         const isActive = pathname === item.href;
         const baseClasses = "text-sm font-medium text-[#111318] dark:text-gray-300 link-hover";
         const activeClasses = isActive ? "underline underline-offset-4" : "";
-        
+
         if (item.external) {
           return (
             <a
